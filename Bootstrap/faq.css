@@ -1,0 +1,369 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+}
+
+body { 
+    font-size: 18px; 
+    font-family: 'Times New Roman', Times, serif; 
+    color: #000000;
+    background-image: url('FAQ/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; 
+}
+
+header {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    height: 80px;
+    background: #ffffff;
+    z-index: 1500;
+}
+
+.menu {
+    height: 80px;
+    max-width: 1500px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.menu img { 
+    height: 80px; 
+    width: auto; 
+}
+
+.switch {
+    display: none;
+}
+
+.chocolate {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
+}
+
+.chocolate span:not(.point) {
+    width: 10px;
+    height: 10px;
+    background: #000000;
+}
+
+.chocolate span:not(.point), .point {
+    transition: 0.9s ease;
+}
+
+.point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #000000;
+    transform: scale(0);
+}
+
+.switch:checked ~ .menu .chocolate span:not(.point) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.switch:checked ~ .menu .chocolate .point {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.switch:checked ~ nav {
+    max-height: 300px;
+}
+
+nav {
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #363636;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.2s;
+}
+
+nav a { 
+    display: block; 
+    padding: 10px; 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav a:hover {
+    background: #d4d4d4;
+    color: #000000;
+}
+
+main { 
+    margin: 0 auto;  
+}
+
+.faq-section {
+    max-width: 1200px;
+    margin: 200px auto;
+    padding: 60px 40px;    
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 10px;
+}
+
+.faq-section h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 100px;
+    padding: 0 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.item {
+    margin: 0 0 50px;
+    padding: 0 0 20px;
+}
+
+.item h3 {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+
+.item p {
+    line-height: 1.5;
+    color: #A2ADD0;
+    text-align: justify;
+}
+
+footer {
+    background: #000000;
+    padding: 60px 0 30px;
+    color: #A2ADD0;
+}
+
+footer .container {
+    max-width: 1500px;
+    padding: 0 40px;
+}
+
+.top {
+    padding: 0 0 40px;
+}
+
+.footer-first, .footer-second, .footer-third {
+    margin-bottom: 0;
+}
+
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin: 0 0 50px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer-second {
+    text-align: center;
+}
+
+.footer-second h3 {
+    color: #ffffff;
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+
+.footer-second input[type="email"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #A2ADD0;
+    border-radius: 10px;
+    color: #ffffff;
+    margin: 0 0 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-second .button-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #A2ADD0;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-third {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.footer-third a {
+    color: #A2ADD0;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.bottom {
+    border-top: 1px solid #363636;
+    padding: 30px 0 0;
+    text-align: center;
+    font-size: 15px;
+    margin: 0 0 5px;
+}
+
+@media (max-width: 1024px) {
+    .faq-section {
+        margin: 150px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body { 
+        font-size: 15px; 
+    }
+
+    header, .menu {
+        height: 60px;
+    }
+    
+    .menu img {
+        height: 50px;
+    }
+    
+    .chocolate {
+        width: 40px;
+        height: 40px;
+    }
+    
+    nav {
+        top: 60px;
+    }
+
+    .faq-section {
+        margin: 100px auto;
+        padding: 40px 20px;
+    }
+
+    .faq-section h1 {
+        font-size: 20px;
+        margin: 0 0 50px;
+    }
+
+    .item {
+        margin: 0 0 30px;
+    }
+
+    .item h3 {
+        font-size: 18px;
+        margin: 0 0 10px;
+    }
+
+    .item p {
+        font-size: 15px;
+    }
+
+    .footer-third {
+        align-items: center !important;
+    }
+    
+    .footer-second .button-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button { 
+        width: 100%; 
+        max-width: 280px; 
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    body { 
+        font-size: 10px; 
+    }
+    
+    header, .menu {
+        height: 50px;
+    }
+    
+    .menu img {
+        height: 40px;
+    }
+    
+    .chocolate {
+        width: 30px;
+        height: 30px;
+        gap: 2px;
+    }
+    
+    .chocolate span:not(.point) {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .point {
+        width: 20px;
+        height: 20px;
+    }
+    
+    nav {
+        top: 50px;
+    }
+    
+    nav a {
+        font-size: 10px;
+        text-align: left;
+        padding: 0 0 20px;
+    }
+
+    .item p {
+        font-size: 10px;
+        text-align: left;
+    }
+}
